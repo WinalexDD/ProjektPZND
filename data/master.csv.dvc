@@ -1,0 +1,5 @@
+outs:
+- md5: 93f4597a22338480797f212e94d3bbb2
+  size: 2706377
+  hash: md5
+  path: master.csv
