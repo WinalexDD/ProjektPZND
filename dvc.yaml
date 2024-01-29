@@ -1,6 +1,6 @@
 stages:
   preprocessing:
-    cmd: python data_preprocessing.py
+    cmd: data_preprocessing.py
     deps:
       - config.py
       - data_clearing.py
@@ -10,9 +10,12 @@ stages:
       - Datapick.country_name
       - Datapick.year
       - Datapick.random_state
+    outs:
+      - train_test.npy
   linreg:
     cmd: python Linear_reg.py
     deps:
+      - train_test.npy
       - data_preprocessing.py
       - config.py
     outs:
@@ -20,6 +23,7 @@ stages:
   olsreg:
     cmd: python OLS_reg.py
     deps:
+      - train_test.npy
       - data_preprocessing.py
       - config.py
     outs:
@@ -27,6 +31,7 @@ stages:
   polyreg:
     cmd: python Polymonial_reg.py
     deps:
+      - train_test.npy
       - data_preprocessing.py
       - config.py
     params:
