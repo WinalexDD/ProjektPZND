@@ -1,10 +1,14 @@
 import data_clearing
 import config
 import pandas as pd
+import dvc.api
 
-null_threshold=1000
-country_name=''
-year=0
+
+#Read params
+params=dvc.api.params_show()
+null_threshold = params['Datapick']['null_threshold']
+country_name = params['Datapick']['country_name']
+year = params['Datapick']['year']
 
 #Getting Data
 dataframe=pd.read_csv(config.DATAPATH)
@@ -16,6 +20,8 @@ if country_name:
     dataframe = data_clearing.custom_country(dataframe, country_name)
 if year != 0:
     dataframe = data_clearing.custom_year(dataframe, year)
+
+
 
 
 
