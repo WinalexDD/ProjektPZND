@@ -1,9 +1,12 @@
-from data_preprocessing import X_train, X_test, y_train, y_test
-import config as cfg
-from statsmodels.formula.api import ols
-import pandas as pd
-from sklearn.metrics import r2_score
 import numpy as np
+import config as cfg
+import pandas as pd
+from statsmodels.formula.api import ols
+from sklearn.metrics import r2_score
+
+#Get data
+data=np.load(cfg.PROCESSEDDATAPATH + '.npy', allow_pickle=True)
+X_train, X_test, y_train, y_test = data[0], data[1], data[2], data[3]
 
 #Create the model
 model = ols('suicide_number ~ population + C(gender) + C(age_group) + C(country) + gdp_per_capita', data=pd.concat([X_train, y_train], axis=1))

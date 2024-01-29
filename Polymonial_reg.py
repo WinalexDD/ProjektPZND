@@ -1,10 +1,13 @@
-from data_preprocessing import X_train, X_test, y_train, y_test
-from sklearn.metrics import r2_score
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
 import numpy as np
 import config as cfg
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 import dvc.api
+
+#Get data
+data=np.load(cfg.PROCESSEDDATAPATH + '.npy', allow_pickle=True)
+X_train, X_test, y_train, y_test = data[0], data[1], data[2], data[3]
 
 #Read params
 params=dvc.api.params_show()
