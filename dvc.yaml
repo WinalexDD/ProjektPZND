@@ -1,0 +1,44 @@
+stages:
+  preprocessing:
+    cmd: python data_preprocessing.py
+    deps:
+      - config.py
+      - data_clearing.py
+      - data/master.csv
+    params:
+      - Datapick.null_threshold
+      - Datapick.country_name
+      - Datapick.year
+      - Datapick.random_state
+  linreg:
+    cmd: python Linear_reg.py
+    deps:
+      - data_preprocessing.py
+      - config.py
+    outs:
+      - data/linreg.npy
+  olsreg:
+    cmd: python OLS_reg.py
+    deps:
+      - data_preprocessing.py
+      - config.py
+    outs:
+      - data/olsreg.npy
+  polyreg:
+    cmd: python Polymonial_reg.py
+    deps:
+      - data_preprocessing.py
+      - config.py
+    params:
+      - polyreg.degrees
+    outs:
+      - data/polyreg.npy
+  compare:
+    cmd: python Comparison.py
+    deps:
+      - data/linreg.npy
+      - data/olsreg.npy
+      - data/polyreg.npy
+      - config.py
+    outs:
+      - data/results.csv
