@@ -22,3 +22,15 @@ def custom_country(dataframe, country: str):
 def custom_year(dataframe, year: int):
     filtered_dataframe = dataframe[dataframe['year'] == year]
     return filtered_dataframe
+
+def num_vs_cat(dataframe):
+    "Function that separates our columns by type of data they contain, either numerical or categorical"
+
+    categorical = []
+    numerical = []
+    for i in range(len(dataframe.columns)):
+        if dataframe.dtypes[i] == 'object':
+            categorical.append(dataframe.columns[i])
+        else:
+            numerical.append(dataframe.columns[i])
+    return categorical, numerical
