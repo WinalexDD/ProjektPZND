@@ -2,13 +2,14 @@ import data_clearing
 import config
 import pandas as pd
 import dvc.api
-
+from sklearn.model_selection import train_test_split
 
 #Read params
 params=dvc.api.params_show()
 null_threshold = params['Datapick']['null_threshold']
 country_name = params['Datapick']['country_name']
 year = params['Datapick']['year']
+random_state= params['Datapick']['random_state']
 
 #Getting Data
 dataframe=pd.read_csv(config.DATAPATH)
@@ -25,16 +26,7 @@ if year != 0:
 for name in data_clearing.num_vs_cat(dataframe)[0]:
     dataframe[str(name)].replace(dataframe[str(name)].unique(),list(range(len(dataframe[str(name)].unique()))), inplace=True)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#Diving dataset for train and test sets
+X = dataframe.drop(['suicide_number'], axis =1)
+y = dataframe['suicide_number']
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size =0.2, random_state=random_state)
