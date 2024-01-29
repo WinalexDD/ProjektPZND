@@ -21,6 +21,10 @@ if country_name:
 if year != 0:
     dataframe = data_clearing.custom_year(dataframe, year)
 
+#Changing categorical values to numerical
+for name in data_clearing.num_vs_cat(dataframe)[0]:
+    dataframe[str(name)].replace(dataframe[str(name)].unique(),list(range(len(dataframe[str(name)].unique()))), inplace=True)
+
 
 
 
