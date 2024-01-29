@@ -3,6 +3,10 @@ Datapick:
   country_name: ''
   year: 0
   random_state: 42
+polyreg:
+  degrees: [2,3,4]
+
+
 
 
 
