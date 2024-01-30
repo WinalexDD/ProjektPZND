@@ -3,6 +3,7 @@ Datapick:
   country_name: ''
   year: 0
   random_state: 42
+  test_size: 0.2
 polyreg:
   degrees: [2,3,4]
 
