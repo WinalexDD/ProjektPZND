@@ -1,9 +1,9 @@
 stages:
   preprocessing:
-    cmd: data_preprocessing.py
+    cmd: python data_preprocessing.py
     deps:
-      - config.py
       - data_clearing.py
+      - config.py
       - data/master.csv
     params:
       - Datapick.null_threshold
@@ -11,11 +11,11 @@ stages:
       - Datapick.year
       - Datapick.random_state
     outs:
-      - train_test.npy
+      - data/train_test.npy
   linreg:
     cmd: python Linear_reg.py
     deps:
-      - train_test.npy
+      - data/train_test.npy
       - data_preprocessing.py
       - config.py
     outs:
@@ -23,7 +23,7 @@ stages:
   olsreg:
     cmd: python OLS_reg.py
     deps:
-      - train_test.npy
+      - data/train_test.npy
       - data_preprocessing.py
       - config.py
     outs:
@@ -31,7 +31,7 @@ stages:
   polyreg:
     cmd: python Polymonial_reg.py
     deps:
-      - train_test.npy
+      - data/train_test.npy
       - data_preprocessing.py
       - config.py
     params:
