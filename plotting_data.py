@@ -2,9 +2,9 @@ from data_visualization import *
 from data_clearing import *
 import pandas as pd
 import dvc.api
+import config as cfg
 
 #Load Data
-result_dataframe=pd.read_csv(cfg.RESULTPATH)
 dataframe=pd.read_csv(cfg.DATAFORPLOT)
 
 #Read params
