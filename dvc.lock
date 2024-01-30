@@ -95,8 +95,8 @@ stages:
     deps:
     - path: config.py
       hash: md5
-      md5: 5baafe779d733091583396c3515e4018
-      size: 211
+      md5: 98174950504746d1693fc56c2d7794b0
+      size: 250
     - path: data/master.csv
       hash: md5
       md5: 93f4597a22338480797f212e94d3bbb2
@@ -110,9 +110,33 @@ stages:
         Datapick.country_name: ''
         Datapick.null_threshold: 1000
         Datapick.random_state: 42
+        Datapick.test_size: 0.2
         Datapick.year: 0
     outs:
+    - path: data/dataframe_plot.csv
+      hash: md5
+      md5: 3c49b6ef7576ca7f144d9844b47cbe1e
+      size: 1506861
     - path: data/train_test.npy
       hash: md5
       md5: ced4606b4d5987def76accd32461ef65
       size: 2227558
+  plotting:
+    cmd: python plotting_data.py
+    deps:
+    - path: config.py
+      hash: md5
+      md5: 98174950504746d1693fc56c2d7794b0
+      size: 250
+    - path: data/dataframe_plot.csv
+      hash: md5
+      md5: 3c49b6ef7576ca7f144d9844b47cbe1e
+      size: 1506861
+    - path: data_clearing.py
+      hash: md5
+      md5: 8b34f26a7ebb1c054fdbeec1ad87a11e
+      size: 1450
+    - path: data_visualization.py
+      hash: md5
+      md5: f387b52697ddd58dca240de5545c7357
+      size: 1244

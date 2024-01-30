@@ -13,6 +13,7 @@ stages:
       - Datapick.test_size
     outs:
       - data/train_test.npy
+      - data/dataframe_plot.csv
   linreg:
     cmd: python Linear_reg.py
     deps:
@@ -48,3 +49,10 @@ stages:
       - config.py
     outs:
       - data/results.csv
+  plotting:
+    cmd: python plotting_data.py
+    deps:
+      - data_clearing.py
+      - data_visualization.py
+      - data/dataframe_plot.csv
+      - config.py
