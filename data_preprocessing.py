@@ -30,7 +30,7 @@ for name in data_clearing.num_vs_cat(dataframe)[0]:
 #Diving dataset for train and test sets
 X = dataframe.drop(['suicide_number'], axis =1)
 y = dataframe['suicide_number']
-X_train, X_test, y_train, y_test = train_test_split(X,y, test_size =0.2, random_state=random_state)
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2, random_state=random_state)
 
 #Saving updating dataset
 np.save(cfg.PROCESSEDDATAPATH, np.array([X_train, X_test, y_train, y_test], dtype=object))

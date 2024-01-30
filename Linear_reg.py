@@ -3,7 +3,6 @@ import config as cfg
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
-
 #Get data
 data=np.load(cfg.PROCESSEDDATAPATH + '.npy', allow_pickle=True)
 X_train, X_test, y_train, y_test = data[0], data[1], data[2], data[3]
