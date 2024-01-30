@@ -1,0 +1,118 @@
+schema: '2.0'
+stages:
+  linreg:
+    cmd: python Linear_reg.py
+    deps:
+    - path: config.py
+      hash: md5
+      md5: 5baafe779d733091583396c3515e4018
+      size: 211
+    - path: data/train_test.npy
+      hash: md5
+      md5: ced4606b4d5987def76accd32461ef65
+      size: 2227558
+    - path: data_preprocessing.py
+      hash: md5
+      md5: b8d660db4bdfceaf9ea4cf3a698ceb38
+      size: 1334
+    outs:
+    - path: data/linreg.npy
+      hash: md5
+      md5: 90786e0ad1ffc697a825a7eb271ddd67
+      size: 144
+  olsreg:
+    cmd: python OLS_reg.py
+    deps:
+    - path: config.py
+      hash: md5
+      md5: 5baafe779d733091583396c3515e4018
+      size: 211
+    - path: data/train_test.npy
+      hash: md5
+      md5: ced4606b4d5987def76accd32461ef65
+      size: 2227558
+    - path: data_preprocessing.py
+      hash: md5
+      md5: b8d660db4bdfceaf9ea4cf3a698ceb38
+      size: 1334
+    outs:
+    - path: data/olsreg.npy
+      hash: md5
+      md5: c3b43e3ed623d1c240319b179912a3bf
+      size: 144
+  polyreg:
+    cmd: python Polymonial_reg.py
+    deps:
+    - path: config.py
+      hash: md5
+      md5: 5baafe779d733091583396c3515e4018
+      size: 211
+    - path: data/train_test.npy
+      hash: md5
+      md5: ced4606b4d5987def76accd32461ef65
+      size: 2227558
+    - path: data_preprocessing.py
+      hash: md5
+      md5: b8d660db4bdfceaf9ea4cf3a698ceb38
+      size: 1334
+    params:
+      params.yaml:
+        polyreg.degrees:
+        - 2
+        - 3
+        - 4
+    outs:
+    - path: data/polyreg.npy
+      hash: md5
+      md5: d7c63cb4ee96151e9b7f0adc197a6984
+      size: 200
+  compare:
+    cmd: python Comparison.py
+    deps:
+    - path: config.py
+      hash: md5
+      md5: 5baafe779d733091583396c3515e4018
+      size: 211
+    - path: data/linreg.npy
+      hash: md5
+      md5: 90786e0ad1ffc697a825a7eb271ddd67
+      size: 144
+    - path: data/olsreg.npy
+      hash: md5
+      md5: c3b43e3ed623d1c240319b179912a3bf
+      size: 144
+    - path: data/polyreg.npy
+      hash: md5
+      md5: d7c63cb4ee96151e9b7f0adc197a6984
+      size: 200
+    outs:
+    - path: data/results.csv
+      hash: md5
+      md5: 229226a1fc665a7aaf5d8f68a70856d8
+      size: 352
+  preprocessing:
+    cmd: python data_preprocessing.py
+    deps:
+    - path: config.py
+      hash: md5
+      md5: 5baafe779d733091583396c3515e4018
+      size: 211
+    - path: data/master.csv
+      hash: md5
+      md5: 93f4597a22338480797f212e94d3bbb2
+      size: 2706377
+    - path: data_clearing.py
+      hash: md5
+      md5: 8b34f26a7ebb1c054fdbeec1ad87a11e
+      size: 1450
+    params:
+      params.yaml:
+        Datapick.country_name: ''
+        Datapick.null_threshold: 1000
+        Datapick.random_state: 42
+        Datapick.year: 0
+    outs:
+    - path: data/train_test.npy
+      hash: md5
+      md5: ced4606b4d5987def76accd32461ef65
+      size: 2227558
