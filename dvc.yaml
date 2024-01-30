@@ -10,6 +10,7 @@ stages:
       - Datapick.country_name
       - Datapick.year
       - Datapick.random_state
+      - Datapick.test_size
     outs:
       - data/train_test.npy
   linreg:
