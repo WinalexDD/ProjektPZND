@@ -62,3 +62,9 @@ stages:
       - plots/scatter_plot.png
       - plots/histogram.png
       - plots/time_series_plot.png
+plots:
+  - plots/desc_plot.png
+  - plots/heat_map.png
+  - plots/scatter_plot.png
+  - plots/histogram.png
+  - plots/time_series_plot.png
