@@ -25,11 +25,11 @@ dataframe.to_csv(cfg.RESULTPATH)
 #Prepare the titles of columns
 table_titles=list(dataframe.keys())
 if country_name and year != 0:
-    table_titles.insert(0, str(country_name)+ " " + str(year))
+    table_titles.insert(0, "country&year=" + str(country_name)+ " " + str(year))
 elif year != 0:
-    table_titles.insert(0, str(year))
+    table_titles.insert(0, "year=" + str(year))
 elif country_name:
-    table_titles.insert(0, str(country_name))
+    table_titles.insert(0, "country=" + str(country_name))
 else:
     table_titles.insert(0, "All data")
 
