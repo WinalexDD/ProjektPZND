@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from pandas.plotting import table
 import config as cfg
 import seaborn as sb
+from data_clearing import num_vs_cat
 
 def characteristics_chart(dataframe):
     "Function that creates a table of statistical features of our cleared data and saves it in folder for data visualization"
@@ -35,7 +36,7 @@ def scatter_plot(dataframe, variable1:str, variable2:str):
     plt.savefig(cfg.DIAGRAMPATH+'\scatter_plot('+ variable1 +','+ variable2 + ').png')
     plt.close()
 
-def histogram(dataframe, variable3, bins):
+def histogram(dataframe, variable3: str, bins: int):
     "Function that creates a histogram of a chosen variable with customize bins"
 
     plt.hist(dataframe[variable3], bins=bins)
