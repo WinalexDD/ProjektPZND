@@ -37,4 +37,4 @@ for element in degrees:
     poly_r2.append([element, r2_1, r2_2])
 
 # Save result as numpy file
-np.save(cfg.POLYREG_PATH, poly_r2)
+np.save(cfg.POLYREG_PATH, np.array(poly_r2))
