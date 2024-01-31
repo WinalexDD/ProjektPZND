@@ -56,3 +56,9 @@ stages:
       - data_visualization.py
       - data/dataframe_plot.csv
       - config.py
+    outs:
+      - plots/desc_plot.png
+      - plots/heat_map.png
+      - plots/scatter_plot.png
+      - plots/histogram.png
+      - plots/time_series_plot.png

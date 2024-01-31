@@ -35,7 +35,7 @@ def scatter_plot(dataframe, variable1: str, variable2: str):
     plt.scatter(dataframe[variable1],dataframe[variable2])
     plt.xlabel(variable1)
     plt.ylabel(variable2)
-    plt.savefig(cfg.DIAGRAM_PATH + r'\scatter_plot(' + variable1 + ',' + variable2 + ').png')
+    plt.savefig(cfg.DIAGRAM_PATH + r'\scatter_plot.png')
     plt.close()
 
 
@@ -45,7 +45,7 @@ def histogram(dataframe, variable3: str, bins: int):
     plt.hist(dataframe[variable3], bins=bins)
     plt.xlabel(variable3)
     plt.ylabel("Amount")
-    plt.savefig(cfg.DIAGRAM_PATH + r"\histogram(" + str(variable3) + ").png")
+    plt.savefig(cfg.DIAGRAM_PATH + r"\histogram.png")
     plt.close()
 
 
