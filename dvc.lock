@@ -138,5 +138,5 @@ stages:
       size: 1615
     - path: data_visualization.py
       hash: md5
-      md5: ed85900ad99ca4d3cd8000045184486a
-      size: 1881
+      md5: e04e419f895ca55a918554006ba54810
+      size: 1929
