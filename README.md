@@ -49,7 +49,9 @@ dvc repro plotting
 to create several plots visualizing the dataset, all of which will be saved in the plots directory, or
 
 ```
-dvc repro comparison
+dvc repro compare
 ```
 
 to get the csv fie with the results in the data directory as well as the table with the results printed in python's console.
+
+If you want to customize the year, country and/or any other parameter used in this project, open file 'params.yaml' and change the parameter value accordingly to parameter type.
