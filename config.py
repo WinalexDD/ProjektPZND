@@ -9,3 +9,4 @@ OLSREGPATH='.\data\olsreg'
 POLYREGPATH='.\data\polyreg'
 
 RESULTPATH='data/results.csv'
+TABLEPATH='data/results_table.txt'
