@@ -14,12 +14,12 @@ random_state = params['Datapick']['random_state']
 test_size = params['Datapick']['test_size']
 
 # Get Data
-dataframe = pd.read_csv(cfg.DATAPATH)
+dataframe = pd.read_csv(cfg.DATA_PATH)
 dataframe = data_clearing.column_adapt(dataframe)
 dataframe = data_clearing.check_null(dataframe, null_threshold)
 
 # Save this dataframe for plotting
-dataframe.to_csv(cfg.DATAFORPLOT)
+dataframe.to_csv(cfg.DATA_FOR_PLOT)
 
 # Check if we want more selective data
 if country_name:
@@ -38,4 +38,4 @@ y = dataframe['suicide_number']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
 
 # Save final dataset for regression
-np.save(cfg.PROCESSEDDATAPATH, np.array([X_train, X_test, y_train, y_test], dtype=object))
+np.save(cfg.PROCESSED_DATA_PATH, np.array([X_train, X_test, y_train, y_test], dtype=object))

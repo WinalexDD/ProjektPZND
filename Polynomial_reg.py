@@ -6,7 +6,7 @@ from sklearn.metrics import r2_score
 import dvc.api
 
 # Get data
-data = np.load(cfg.PROCESSEDDATAPATH + '.npy', allow_pickle=True)
+data = np.load(cfg.PROCESSED_DATA_PATH + '.npy', allow_pickle=True)
 X_train, X_test, y_train, y_test = data[0], data[1], data[2], data[3]
 
 # Read params
@@ -37,4 +37,4 @@ for element in degrees:
     poly_r2.append([element, r2_1, r2_2])
 
 # Save result as numpy file
-np.save(cfg.POLYREGPATH, poly_r2)
+np.save(cfg.POLYREG_PATH, poly_r2)

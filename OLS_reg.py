@@ -5,7 +5,7 @@ from statsmodels.formula.api import ols
 from sklearn.metrics import r2_score
 
 # Get data
-data = np.load(cfg.PROCESSEDDATAPATH + '.npy', allow_pickle=True)
+data = np.load(cfg.PROCESSED_DATA_PATH + '.npy', allow_pickle=True)
 X_train, X_test, y_train, y_test = data[0], data[1], data[2], data[3]
 
 # Create the model
@@ -22,4 +22,4 @@ ols_r2_2 = r2_score(y_test, y_pred)
 
 # Save results as an array
 Y = np.array([ols_r2_1, ols_r2_2])
-np.save(cfg.OLSREGPATH, Y)
+np.save(cfg.OLSREG_PATH, Y)

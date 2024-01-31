@@ -10,9 +10,9 @@ country_name = params['Datapick']['country_name']
 year = params['Datapick']['year']
 
 # Load saved results
-linreg = np.load(cfg.LINREGPATH + '.npy')
-olsreg = np.load(cfg.OLSREGPATH + '.npy')
-polyreg = np.load(cfg.POLYREGPATH + '.npy')
+linreg = np.load(cfg.LINREG_PATH + '.npy')
+olsreg = np.load(cfg.OLSREG_PATH + '.npy')
+polyreg = np.load(cfg.POLYREG_PATH + '.npy')
 
 # Create dataframe to present results
 dataframe = pd.DataFrame(data={'Linear Regression': linreg, 'OLS Model': olsreg},
@@ -22,7 +22,7 @@ for number in range(len(polyreg)):
                      [polyreg[number][1], polyreg[number][2]])
 
 # Save the dataframe as csv
-dataframe.to_csv(cfg.RESULTPATH)
+dataframe.to_csv(cfg.RESULT_PATH)
 
 # Prepare the titles of columns
 table_titles = list(dataframe.keys())
@@ -38,5 +38,5 @@ else:
 # Print and save the table with results
 table = tabulate(dataframe, headers=table_titles, tablefmt='psql')
 print(table)
-with open(cfg.TABLEPATH, 'w') as f:
+with open(cfg.TABLE_PATH, 'w') as f:
     f.write(tabulate(table))

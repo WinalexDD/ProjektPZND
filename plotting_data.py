@@ -5,7 +5,7 @@ import dvc.api
 import config as cfg
 
 # Load Data
-dataframe = pd.read_csv(cfg.DATAFORPLOT, index_col=0)
+dataframe = pd.read_csv(cfg.DATA_FOR_PLOT, index_col=0)
 
 # Read params
 params = dvc.api.params_show()

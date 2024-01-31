@@ -14,7 +14,7 @@ def characteristics_chart(dataframe):
     plot.yaxis.set_visible(False)
     table(plot, desc, loc='center')
 
-    plt.savefig(cfg.DIAGRAMPATH + r'\desc_plot.png')
+    plt.savefig(cfg.DIAGRAM_PATH + r'\desc_plot.png')
     plt.close()
 
 
@@ -24,7 +24,7 @@ def heat_map(dataframe):
     fig, ax = plt.subplots(figsize=(12, 10))
     corr = dataframe.corr()
     sb.heatmap(corr, cmap="Blues", annot=True, ax=ax)
-    fig.savefig(cfg.DIAGRAMPATH + r"\heat_map.png")
+    fig.savefig(cfg.DIAGRAM_PATH + r"\heat_map.png")
     plt.close()
 
 
@@ -35,7 +35,7 @@ def scatter_plot(dataframe, variable1: str, variable2: str):
     plt.scatter(dataframe[variable1],dataframe[variable2])
     plt.xlabel(variable1)
     plt.ylabel(variable2)
-    plt.savefig(cfg.DIAGRAMPATH + r'\scatter_plot(' + variable1 + ',' + variable2 + ').png')
+    plt.savefig(cfg.DIAGRAM_PATH + r'\scatter_plot(' + variable1 + ',' + variable2 + ').png')
     plt.close()
 
 
@@ -45,7 +45,7 @@ def histogram(dataframe, variable3: str, bins: int):
     plt.hist(dataframe[variable3], bins=bins)
     plt.xlabel(variable3)
     plt.ylabel("Amount")
-    plt.savefig(cfg.DIAGRAMPATH + r"\histogram(" + str(variable3) + ").png")
+    plt.savefig(cfg.DIAGRAM_PATH + r"\histogram(" + str(variable3) + ").png")
     plt.close()
 
 
@@ -56,5 +56,5 @@ def time_series_plot(dataframe):
     sb.pointplot(x='year', y='suicide_number', data=dataframe)
     plt.xlabel('year')
     plt.ylabel('number of suicides')
-    plt.savefig(cfg.DIAGRAMPATH + r"\time_series_plot.png")
+    plt.savefig(cfg.DIAGRAM_PATH + r"\time_series_plot.png")
     plt.close()
