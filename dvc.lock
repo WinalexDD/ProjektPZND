@@ -138,5 +138,26 @@ stages:
       size: 1688
     - path: data_visualization.py
       hash: md5
-      md5: 0475ea90b3cd65c242796768bbe43e9c
-      size: 1947
+      md5: 105f9fcbf42290e477259ca784e202d0
+      size: 1886
+    outs:
+    - path: plots/desc_plot.png
+      hash: md5
+      md5: cb65805bb3676525e7bb8931a2b9ffea
+      size: 29150
+    - path: plots/heat_map.png
+      hash: md5
+      md5: 024fe1feb12252c935aa8e4027e2bc59
+      size: 37355
+    - path: plots/histogram.png
+      hash: md5
+      md5: e79d31eb4a050456e7ba278ccbcbe40a
+      size: 11499
+    - path: plots/scatter_plot.png
+      hash: md5
+      md5: edc9954dee213792b8b10ca08cb694d3
+      size: 47972
+    - path: plots/time_series_plot.png
+      hash: md5
+      md5: 915235b8a84be7295f419e6e90f05c5d
+      size: 60494
