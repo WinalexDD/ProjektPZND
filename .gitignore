@@ -167,3 +167,6 @@ cython_debug/
 
 # Image Files
 *.png
+
+# TXT Files
+.data/**/*.txt
