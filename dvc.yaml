@@ -31,7 +31,7 @@ stages:
     outs:
       - data/olsreg.npy
   polyreg:
-    cmd: python Polymonial_reg.py
+    cmd: python Polynomial_reg.py
     deps:
       - data/train_test.npy
       - data_preprocessing.py
