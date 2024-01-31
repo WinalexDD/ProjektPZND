@@ -9,6 +9,8 @@ polyreg:
 plotting:
   scatter_plot_var1: 'population'
   scatter_plot_var2: 'suicide_number'
+  histogram_var: 'population'
+  histogram_bins: 15
 
 
 
