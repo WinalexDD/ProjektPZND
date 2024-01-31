@@ -5,16 +5,16 @@ stages:
     deps:
     - path: config.py
       hash: md5
-      md5: 9d55c2c0e02f2f704de4263baf9c64f0
-      size: 286
+      md5: e6112203129aea53f14ca3ae1b7370d6
+      size: 326
     - path: data/train_test.npy
       hash: md5
       md5: ced4606b4d5987def76accd32461ef65
       size: 2227558
     - path: data_preprocessing.py
       hash: md5
-      md5: 10e033a73b34a62b10035ec1fc7f0781
-      size: 1463
+      md5: d98e9436ab35385ab1b63f30ec818a3f
+      size: 1517
     outs:
     - path: data/linreg.npy
       hash: md5
@@ -25,36 +25,36 @@ stages:
     deps:
     - path: config.py
       hash: md5
-      md5: 9d55c2c0e02f2f704de4263baf9c64f0
-      size: 286
+      md5: e6112203129aea53f14ca3ae1b7370d6
+      size: 326
     - path: data/train_test.npy
       hash: md5
       md5: ced4606b4d5987def76accd32461ef65
       size: 2227558
     - path: data_preprocessing.py
       hash: md5
-      md5: 10e033a73b34a62b10035ec1fc7f0781
-      size: 1463
+      md5: d98e9436ab35385ab1b63f30ec818a3f
+      size: 1517
     outs:
     - path: data/olsreg.npy
       hash: md5
       md5: c3b43e3ed623d1c240319b179912a3bf
       size: 144
   polyreg:
-    cmd: python Polymonial_reg.py
+    cmd: python Polynomial_reg.py
     deps:
     - path: config.py
       hash: md5
-      md5: 9d55c2c0e02f2f704de4263baf9c64f0
-      size: 286
+      md5: e6112203129aea53f14ca3ae1b7370d6
+      size: 326
     - path: data/train_test.npy
       hash: md5
       md5: ced4606b4d5987def76accd32461ef65
       size: 2227558
     - path: data_preprocessing.py
       hash: md5
-      md5: 10e033a73b34a62b10035ec1fc7f0781
-      size: 1463
+      md5: d98e9436ab35385ab1b63f30ec818a3f
+      size: 1517
     params:
       params.yaml:
         polyreg.degrees:
@@ -71,8 +71,8 @@ stages:
     deps:
     - path: config.py
       hash: md5
-      md5: 9d55c2c0e02f2f704de4263baf9c64f0
-      size: 286
+      md5: e6112203129aea53f14ca3ae1b7370d6
+      size: 326
     - path: data/linreg.npy
       hash: md5
       md5: 90786e0ad1ffc697a825a7eb271ddd67
@@ -88,23 +88,23 @@ stages:
     outs:
     - path: data/results.csv
       hash: md5
-      md5: 229226a1fc665a7aaf5d8f68a70856d8
+      md5: e781499c8d1442d7cdf1bbd6cbfeb330
       size: 352
   preprocessing:
     cmd: python data_preprocessing.py
     deps:
     - path: config.py
       hash: md5
-      md5: 9d55c2c0e02f2f704de4263baf9c64f0
-      size: 286
+      md5: e6112203129aea53f14ca3ae1b7370d6
+      size: 326
     - path: data/master.csv
       hash: md5
       md5: 93f4597a22338480797f212e94d3bbb2
       size: 2706377
     - path: data_clearing.py
       hash: md5
-      md5: 2dec5189907324bd1eaf404de788824a
-      size: 1615
+      md5: 5c88f81475ebef8c481deb938f4a4b00
+      size: 1688
     params:
       params.yaml:
         Datapick.country_name: ''
@@ -126,17 +126,17 @@ stages:
     deps:
     - path: config.py
       hash: md5
-      md5: 9d55c2c0e02f2f704de4263baf9c64f0
-      size: 286
+      md5: e6112203129aea53f14ca3ae1b7370d6
+      size: 326
     - path: data/dataframe_plot.csv
       hash: md5
       md5: 3c49b6ef7576ca7f144d9844b47cbe1e
       size: 1506861
     - path: data_clearing.py
       hash: md5
-      md5: 2dec5189907324bd1eaf404de788824a
-      size: 1615
+      md5: 5c88f81475ebef8c481deb938f4a4b00
+      size: 1688
     - path: data_visualization.py
       hash: md5
-      md5: e04e419f895ca55a918554006ba54810
-      size: 1929
+      md5: 0475ea90b3cd65c242796768bbe43e9c
+      size: 1947
